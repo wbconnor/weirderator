@@ -79,6 +79,17 @@
                 </div>
             @endif
 
+
+
+            <div id="app">
+                <div class="content">
+                    <example-component></example-component>
+                </div>
+            </div>
+
+
+
+
             <div class="content">
                 <div class="title m-b-md">
                     Laravel
