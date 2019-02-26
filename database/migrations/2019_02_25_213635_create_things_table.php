@@ -19,6 +19,10 @@ class CreateThingsTable extends Migration
             $table->integer('weird_votes');
             $table->integer('total_votes');
             $table->decimal('weird_score', 8, 2);
+
+            $table->integer('user_id')->unsigned()->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
+
             $table->timestamps();
         });
     }
