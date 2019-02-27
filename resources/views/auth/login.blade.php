@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.bare-layout')
 
 @section('content')
 <div class="container">
@@ -56,6 +56,12 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
+
+                                <a href="/register">
+                                    <button type="button" class="btn btn-primary">
+                                        {{ __('Register') }}
+                                    </button>
+                                </a>
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
