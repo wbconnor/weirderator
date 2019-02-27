@@ -1,0 +1,41 @@
+.search {
+    opacity: 0;
+    width:0px;
+    margin-right: 25px;
+    -webkit-transition: width .5s ease, opacity .5s ease, -webkit-transform .5s ease;
+    transition: width .5s ease, opacity .5s ease, transform .5s ease;
+}
+
+form.search.expanded {
+    border-radius: 0;
+    width: 300px;
+    opacity: 1;
+    margin-right: 25px;
+    -webkit-transition: width .5s ease, opacity .5s ease, -webkit-transform .5s ease;
+    transition: width .5s ease, opacity .5s ease, transform .5s ease;
+}
+
+.search.expanded {
+    opacity: 1;
+}
+
+.nav-categories {
+    margin-left: 15px;
+}
+
+.slide {
+    margin-right: 10px;
+}
+
+.downvote {
+    fill:purple;
+}
+
+.upvote {
+    fill:orange;
+}
+
+.unstyle, .unstyle:link, .unstyle:hover {
+    color: inherit;
+    text-decoration: inherit;
+  }
