@@ -31,6 +31,10 @@ export default {
   mounted() {
     this.getThings();
   },
+  props: [
+    'user',
+    'csrf_token'
+  ],
   data() {
     return {
       things: [],

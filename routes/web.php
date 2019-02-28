@@ -12,7 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('main');
+    return view('main', ['user' => Auth::user() ? Auth::user() : false]);
 });
+
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Auth::routes();

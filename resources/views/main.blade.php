@@ -4,7 +4,10 @@
 <div class="flex-center position-ref full-height">
     <div id="app">
         <div class="content">
-            <thing-cards></thing-cards>
+            <thing-cards
+                :user="{{ json_encode($user) }}"
+                csrf_token="{{ csrf_token() }}"
+            ></thing-cards>
         </div>
     </div>
 </div>
