@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Vote;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class VoteController extends Controller
 {
@@ -35,7 +36,14 @@ class VoteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = Input::all();
+        $new = [
+            "user_id" => $input['userId'],
+            "thing_id" => $input['thingId'],
+            "vote_direction" => $input['voteDirection'],
+        ];
+        $vote = Vote::create($new);
+        return response()->json([], 204);
     }
 
     /**

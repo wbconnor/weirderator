@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Thing;
 
-class ThingsController extends Controller
+class ThingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class ThingsController extends Controller
      */
     public function index()
     {
-        $things = Things::all();
+        $things = Thing::all();
 
         return response()->json($things);
     }

@@ -24,3 +24,11 @@ Route::group(['prefix' => 'things'], function () {
     Route::put('/{id}', 'ThingController@update');
     Route::delete('/{id}', 'ThingController@destroy');
 });
+
+Route::group(['prefix' => 'votes'], function () {
+    Route::get('/', 'VoteController@index');
+    Route::post('/', 'VoteController@store');
+    Route::get('/{id}', 'VoteController@show');
+    Route::put('/{id}', 'VoteController@update');
+    Route::delete('/{id}', 'VoteController@destroy');
+});
