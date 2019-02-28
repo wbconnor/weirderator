@@ -1,14 +1,16 @@
-@extends('layouts.nav-layout')
+@extends('layouts.layout')
 
 @section('content')
+<navbar
+    :user="{{ json_encode($user) }}"
+    csrf_token="{{ csrf_token() }}"
+></navbar>
 <div class="flex-center position-ref full-height">
-    <div id="app">
-        <div class="content">
-            <thing-cards
-                :user="{{ json_encode($user) }}"
-                csrf_token="{{ csrf_token() }}"
-            ></thing-cards>
-        </div>
+    <div class="content">
+        <thing-cards
+            :user="{{ json_encode($user) }}"
+            csrf_token="{{ csrf_token() }}"
+        ></thing-cards>
     </div>
 </div>
 @endsection

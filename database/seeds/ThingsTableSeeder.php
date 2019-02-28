@@ -15,7 +15,7 @@ class ThingsTableSeeder extends Seeder
 
         $things = array(
           array(
-            'title' => 'Washing socks before you wear them',
+            'title' => 'Washing brand new socks before you wear them',
             'weird_votes' => 9,
             'total_votes' => 10,
             'weird_score' => .9

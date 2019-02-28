@@ -18,9 +18,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::group(['prefix' => 'things'], function () {
-    Route::get('/', 'ThingsController@index');
-    Route::post('/', 'ThingsController@store');
-    Route::get('/{id}', 'ThingsController@show');
-    Route::put('/{id}', 'ThingsController@update');
-    Route::delete('/{id}', 'ThingsController@destroy');
+    Route::get('/', 'ThingController@index');
+    Route::post('/', 'ThingController@store');
+    Route::get('/{id}', 'ThingController@show');
+    Route::put('/{id}', 'ThingController@update');
+    Route::delete('/{id}', 'ThingController@destroy');
 });

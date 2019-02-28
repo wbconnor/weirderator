@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Vote;
 use Illuminate\Http\Request;
-use App\Things;
 
-class ThingsController extends Controller
+class VoteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,7 @@ class ThingsController extends Controller
      */
     public function index()
     {
-        $things = Things::all();
-
-        return response()->json($things);
+        //
     }
 
     /**
@@ -37,47 +35,39 @@ class ThingsController extends Controller
      */
     public function store(Request $request)
     {
-        $wheel = Wheel::create($request->all());
-
-        return response()->json($wheel);
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Vote  $vote
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Vote $vote)
     {
-        $wheel = Wheel::find($id);
-
-        return response()->json($wheel);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Vote  $vote
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Vote $vote)
     {
-        $wheel = Wheel::find($id);
-
-        $wheel->update($request->all());
-
-        return response()->json($wheel);
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Vote  $vote
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Vote $vote)
     {
         //
     }
@@ -85,13 +75,11 @@ class ThingsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Vote  $vote
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Vote $vote)
     {
-        Wheel::find($id)->delete();
-
-        return response()->json([], 204);
+        //
     }
 }
