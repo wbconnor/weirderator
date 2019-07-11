@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Thing;
+use Auth;
+//use Illuminate\Http\Request;
 
 class ThingController extends Controller
 {
@@ -14,7 +16,8 @@ class ThingController extends Controller
      */
     public function index()
     {
-        $things = Thing::all();
+        //$things = Thing::all();
+        $things = Thing::paginate(20);
 
         return response()->json($things);
     }
@@ -26,7 +29,7 @@ class ThingController extends Controller
      */
     public function create()
     {
-        //
+        return view('thing_create', ['user' => Auth::user() ? Auth::user() : false]);
     }
 
     /**
@@ -37,7 +40,9 @@ class ThingController extends Controller
      */
     public function store(Request $request)
     {
+        $thing = Thing::create($request->all());
 
+        return view('main', ['user' => Auth::user() ? Auth::user() : false]);
     }
 
     /**
