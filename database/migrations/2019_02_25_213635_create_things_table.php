@@ -16,9 +16,6 @@ class CreateThingsTable extends Migration
         Schema::create('things', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->integer('weird_votes');
-            $table->integer('total_votes');
-            $table->decimal('weird_score', 8, 2);
 
             $table->integer('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users');
