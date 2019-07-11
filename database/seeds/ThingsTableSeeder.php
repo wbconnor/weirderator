@@ -16,27 +16,21 @@ class ThingsTableSeeder extends Seeder
         $things = array(
           array(
             'title' => 'Washing brand new socks before you wear them',
-            'weird_votes' => 9,
-            'total_votes' => 10,
-            'weird_score' => .9
+            'user_id' => 1
           ),
           array(
             'title' => 'Mustard on Fritos',
-            'weird_votes' => 9,
-            'total_votes' => 10,
-            'weird_score' => .9
+            'user_id' => 1
           ),
           array(
             'title' => 'Getting naked before you poop',
-            'weird_votes' => 9,
-            'total_votes' => 10,
-            'weird_score' => .9
+            'user_id' => 1
           ),
         );
 
-        foreach($things as &$wheel) {
-          $wheel['created_at'] = Carbon\Carbon::now();
-          $wheel['updated_at'] = Carbon\Carbon::now();
+        foreach($things as &$thing) {
+          $thing['created_at'] = Carbon\Carbon::now();
+          $thing['updated_at'] = Carbon\Carbon::now();
         }
         DB::table('things')->insert($things);
     }
